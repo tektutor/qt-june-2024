@@ -3,6 +3,8 @@
 ## Qt Framework Overview
 <pre>
 - Qt is a C++ GUI Framework
+- is a cross-platform framework
+- in other the source code is compilable in all platforms (Mac, Linux & Windows )
 - Qt can be used with Python to devel HMI application
 - Qt is used by companies who work in
   - Infotainment
