@@ -17,3 +17,8 @@
 - Qt IDE
   - is called Qt Creator
 </pre>
+
+## What is Layout in Qt?
+<pre>
+  
+</pre>
