@@ -53,8 +53,12 @@ MainDlg::MainDlg() {
 	);
 
 	pPrevBttn->setFocus( );
-}
+	setMinimumHeight(1000);
+        setMinimumWidth(1000);
+        setMaximumWidth(1200);
+        setMaximumHeight(1200);
 
+}
 void MainDlg::onPrevButtonClicked() {
 	qDebug() << "Prev button clicked ...";
 
