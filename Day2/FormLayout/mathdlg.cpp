@@ -8,6 +8,7 @@ MathDlg::MathDlg() {
 	pFirstNumberEdit = new QLineEdit();
 	pSecondNumberEdit = new QLineEdit();
 	pResultEdit = new QLineEdit();
+	pResultEdit->setEnabled ( false );
 
 	pLayout = new QFormLayout();
 
@@ -19,6 +20,7 @@ MathDlg::MathDlg() {
 	pSubtractBttn = new QPushButton("Subtract");
 	pMultiplyBttn = new QPushButton("Multiply");
 	pDivideBttn = new QPushButton("Divide");
+	pExitBttn = new QPushButton("Exit");
 
 	pNavigationLayout = new QBoxLayout(QBoxLayout::LeftToRight);
 	pNavigationLayout->addStretch();
@@ -27,6 +29,7 @@ MathDlg::MathDlg() {
 	pNavigationLayout->addWidget ( pSubtractBttn );
 	pNavigationLayout->addWidget ( pMultiplyBttn );
 	pNavigationLayout->addWidget ( pDivideBttn );
+	pNavigationLayout->addWidget ( pExitBttn );
 
 	pMainLayout = new QVBoxLayout;
 
@@ -59,6 +62,12 @@ MathDlg::MathDlg() {
 		this,
 		SLOT ( onDivideButtonClicked() )
 	);
+	connect ( 
+		pExitBttn,
+		SIGNAL ( clicked() ),
+		this,
+		SLOT ( close() ) 
+	);
 }
 
 void MathDlg::onAddButtonClicked() {
@@ -67,9 +76,9 @@ void MathDlg::onAddButtonClicked() {
 	QString firstNumberStr = pFirstNumberEdit->text();
 	QString secondNumberStr = pSecondNumberEdit->text();
 
-	int firstNumber = firstNumberStr.toInt();
-	int secondNumber = secondNumberStr.toInt();
-	int result = firstNumber + secondNumber;
+	double firstNumber = firstNumberStr.toDouble();
+	double secondNumber = secondNumberStr.toDouble();
+	double result = firstNumber + secondNumber;
 
 	QString resultStr;
 	resultStr.setNum( result);
@@ -80,14 +89,50 @@ void MathDlg::onAddButtonClicked() {
 
 void MathDlg::onSubtractButtonClicked() {
 	qDebug() << "Subtract button clicked ...";
+
+	QString firstNumberStr = pFirstNumberEdit->text();
+	QString secondNumberStr = pSecondNumberEdit->text();
+
+	double firstNumber = firstNumberStr.toDouble();
+	double secondNumber = secondNumberStr.toDouble();
+	double result = firstNumber - secondNumber;
+
+	QString resultStr;
+	resultStr.setNum( result);
+
+	pResultEdit->setText ( resultStr );
 }
 
 void MathDlg::onMultiplyButtonClicked() {
 	qDebug() << "Multiply button clicked ...";
+
+	QString firstNumberStr = pFirstNumberEdit->text();
+	QString secondNumberStr = pSecondNumberEdit->text();
+
+	double firstNumber = firstNumberStr.toDouble();
+	double secondNumber = secondNumberStr.toDouble();
+	double result = firstNumber * secondNumber;
+
+	QString resultStr;
+	resultStr.setNum( result);
+
+	pResultEdit->setText ( resultStr );
 }
 
 void MathDlg::onDivideButtonClicked() {
 	qDebug() << "Divide button clicked ...";
+
+	QString firstNumberStr = pFirstNumberEdit->text();
+	QString secondNumberStr = pSecondNumberEdit->text();
+
+	double firstNumber = firstNumberStr.toDouble();
+	double secondNumber = secondNumberStr.toDouble();
+	double result = firstNumber / secondNumber;
+
+	QString resultStr;
+	resultStr.setNum( result);
+
+	pResultEdit->setText ( resultStr );
 }
 
 MathDlg::~MathDlg() {

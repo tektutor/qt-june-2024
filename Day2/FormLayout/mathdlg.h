@@ -20,7 +20,7 @@ private:
 	QFormLayout *pLayout;	
 	QLabel *pFirstNumberLbl, *pSecondNumberLbl, *pResultLbl;	
 	QLineEdit *pFirstNumberEdit, *pSecondNumberEdit, *pResultEdit; 
-	QPushButton *pAddBttn, *pSubtractBttn, *pMultiplyBttn, *pDivideBttn;
+	QPushButton *pAddBttn, *pSubtractBttn, *pMultiplyBttn, *pDivideBttn, *pExitBttn;
 
 	QBoxLayout *pNavigationLayout;
 
