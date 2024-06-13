@@ -22,3 +22,15 @@
 <pre>
   
 </pre>
+
+##  Cloning the Training Repository ( only the first time )
+```
+cd ~
+git clone https://github.com/tektutor/qt-june-2024.git
+```
+
+## Pulling only the delta changes after your have cloned once
+```
+cd ~/qt-june-2024
+git pull
+```
