@@ -1,6 +1,6 @@
 #include "gardener.h"
 
-int Gardener::saplingCount = 5;
+int Gardener::saplingCount = 15;
 QWaitCondition Gardener::diggerCondition;
 QWaitCondition Gardener::planterCondition;
 QWaitCondition Gardener::startWork;
