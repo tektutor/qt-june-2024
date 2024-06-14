@@ -14,7 +14,7 @@ The GUI shall look as shown below
 ![gardener](gardener.png)
 
 ## Lab - Thread GUI Application
-![app](thread.png)
+![app](threads.png)
 
 <pre>
 - We need to develop a HMI for a multi-threaded application using Qt Widgets Framework
