@@ -9,6 +9,14 @@
 - The third gardener will fill the pit and water the sapling, let's call this person as filler
 </pre>
 
-## Lab - You need to develop a GUI application for the Gardener command line application
+## Assignment - You need to develop a GUI application for the Gardener command line application
 The GUI shall look as shown below
 ![gardener](gardener.png)
+
+## Lab - Thread GUI Application
+![app](thread.png)
+
+<pre>
+- We need to develop a HMI for a multi-threaded application using Qt Widgets Framework
+- 
+</pre>
