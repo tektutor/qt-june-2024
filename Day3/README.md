@@ -18,5 +18,8 @@ The GUI shall look as shown below
 
 <pre>
 - We need to develop a HMI for a multi-threaded application using Qt Widgets Framework
-- 
+- When we click on the 'Create Thread' button it should add one new Tab in the Tab Widget
+- When we click on the 'Start Thread' button, the thread should be started and we should see the threads messages on the respective Thread Tab
+- When we click on the 'Stop Thread' button, the thread that is running in that Tab should be stopped
+- When we switch between the tabs, we should be able to enable/disable buttons as per the thread status
 </pre>
