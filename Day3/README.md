@@ -8,3 +8,7 @@
 - The second gardener will plant the saplings with some compost. Let's call this person as planter
 - The third gardener will fill the pit and water the sapling, let's call this person as filler
 </pre>
+
+## Lab - You need to develop a GUI application for the Gardener command line application
+The GUI shall look as shown below
+![gardener](gardener.png)
