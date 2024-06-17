@@ -7,6 +7,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QString>
+#include <QGroupBox>
 
 #include "tabdlg.h"
 

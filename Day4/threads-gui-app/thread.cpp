@@ -13,7 +13,7 @@ void Thread::run() {
 
 	while ( true ) {
 		tmp.setNum(++value);
-		msg.append(" message => ");
+		msg.append(": message => ");
 		msg.append(tmp);
 		emit threadMessage( msg );  
 		msg = name;

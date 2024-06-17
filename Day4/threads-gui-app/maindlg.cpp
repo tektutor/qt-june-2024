@@ -1,7 +1,6 @@
 #include "maindlg.h"
 
 MainDlg::MainDlg() {
-
 	pCreateBttn = new QPushButton("Create Thread");
 	pStartBttn = new QPushButton("Start Thread");
 	pStopBttn = new QPushButton("Stop Thread");
@@ -15,12 +14,16 @@ MainDlg::MainDlg() {
 	pNavigationLayout->addWidget( pStopBttn );
 	pNavigationLayout->addWidget( pExitBttn );
 
+	QGroupBox *pGroup = new QGroupBox("");
+	pGroup->setLayout ( pNavigationLayout );
+
 	pTabWidget = new QTabWidget();
 
 	pMainLayout = new QVBoxLayout;
 
 	pMainLayout->addWidget ( pTabWidget );
-	pMainLayout->addLayout ( pNavigationLayout );
+	//pMainLayout->addLayout ( pNavigationLayout );
+	pMainLayout->addWidget( pGroup );
 
 	setLayout ( pMainLayout );
 
