@@ -1,0 +1,10 @@
+--bare
+-I
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug
+-I
+/home/jegan/Qt/6.7.1/gcc_64/./qml
+--resource
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_HelloQML.qrc
+--resource
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appHelloQML_raw_qml_0.qrc
+/home/jegan/qt-june-2024/Day4/HelloQML/Main.qml

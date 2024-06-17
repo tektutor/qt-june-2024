@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/HelloQML/">
+    <file alias="Main.qml">/home/jegan/qt-june-2024/Day4/HelloQML/Main.qml</file>
+  </qresource>
+</RCC>
+

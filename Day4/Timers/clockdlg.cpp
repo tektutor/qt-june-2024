@@ -2,7 +2,7 @@
 
 ClockDlg::ClockDlg() {
 	pTimer = new QTimer();
-	pTimer->setInterval(1000);
+	pTimer->setInterval(1000); //1000 milliseconds makes 1 second
 
 	pHoursLabel = new QLabel("");	
 	pSeparator1 = new QLabel("");
@@ -61,7 +61,7 @@ void ClockDlg::onTimerTriggered() {
 			if ( hours < 23 )
 				++hours;
 			else {
-				hours = 1;
+				hours = 0;
 			}
 		}
 	}

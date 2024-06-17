@@ -1,0 +1,14 @@
+-rootPath
+/home/jegan/qt-june-2024/Day4/HelloQML
+-cmake-output
+-output-file
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug/.qt/qml_imports/appHelloQML_conf.cmake
+-importPath
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug/HelloQML
+-importPath
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug
+-importPath
+/home/jegan/Qt/6.7.1/gcc_64/./qml
+-qrcFiles
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_HelloQML.qrc
+/home/jegan/qt-june-2024/Day4/HelloQML/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appHelloQML_raw_qml_0.qrc
