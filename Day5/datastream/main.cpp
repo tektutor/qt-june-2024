@@ -9,6 +9,7 @@ int main(int argc, char **argv) {
 	jegan.save();
 
 	Employee employee;	
+	employee.print();
 	employee.read();
 
 	return theApp.exec();
