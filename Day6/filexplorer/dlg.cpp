@@ -20,6 +20,10 @@ Dlg::Dlg() {
 	pTreeView->setModel( pDriveModel );
 	pListView->setModel( pFileModel );
 
+	pTreeView->hideColumn(1);
+	pTreeView->hideColumn(2);
+	pTreeView->hideColumn(3);
+
 	pSplitter->addWidget( pTreeView );
 	pSplitter->addWidget( pListView );
 
