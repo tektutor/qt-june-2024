@@ -35,3 +35,9 @@ qmake
 make clean all
 ./db
 ```
+
+Expected output
+![image](https://github.com/tektutor/qt-june-2024/assets/12674043/b2ba88ce-fb83-4f77-a881-fc6d7735d9ab)
+![image](https://github.com/tektutor/qt-june-2024/assets/12674043/a6aa9db1-33b0-42a4-b294-453bfc511e48)
+![image](https://github.com/tektutor/qt-june-2024/assets/12674043/4f8044ef-466f-400f-9cb0-f25753409389)
+
