@@ -9,11 +9,13 @@
 class DBLayer : public QObject {
 Q_OBJECT
 private:
+	QSqlDatabase db;
 public:
 	DBLayer();
 	~DBLayer();
-	void connect();
-	void disconnect();
+	void printRecords();
+	void updateRecord();
+	void deleteRecord();
 };
 
 

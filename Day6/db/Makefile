@@ -40,7 +40,7 @@ DISTNAME      = db1.0.0
 DISTDIR = /home/jegan/qt-june-2024/Day6/db/.tmp/db1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/home/jegan/Qt/6.7.1/gcc_64/lib -Wl,-rpath-link,/home/jegan/Qt/6.7.1/gcc_64/lib
-LIBS          = $(SUBLIBS) /home/jegan/Qt/6.7.1/gcc_64/lib/libQt6Gui.so /home/jegan/Qt/6.7.1/gcc_64/lib/libQt6Sql.so /home/jegan/Qt/6.7.1/gcc_64/lib/libQt6Core.so -lpthread -lGL
+LIBS          = $(SUBLIBS) /home/jegan/Qt/6.7.1/gcc_64/lib/libQt6Gui.so /home/jegan/Qt/6.7.1/gcc_64/lib/libQt6Sql.so /home/jegan/Qt/6.7.1/gcc_64/lib/libQt6Core.so -lpthread -lGL   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -379,6 +379,7 @@ DIST          = ../../../Qt/6.7.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -733,6 +734,7 @@ Makefile: db.pro ../../../Qt/6.7.1/gcc_64/mkspecs/linux-g++/qmake.conf ../../../
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/6.7.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -1079,6 +1081,7 @@ Makefile: db.pro ../../../Qt/6.7.1/gcc_64/mkspecs/linux-g++/qmake.conf ../../../
 ../../../Qt/6.7.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/6.7.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/6.7.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/6.7.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/6.7.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/6.7.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -1259,6 +1262,22 @@ moc_db.cpp: db.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlglobal.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsql-config.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/QDebug \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qshareddata_impl.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qset.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.7.1/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.7.1/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/q23utility.h \
 		moc_predefs.h \
 		../../../Qt/6.7.1/gcc_64/libexec/moc
 	/home/jegan/Qt/6.7.1/gcc_64/libexec/moc $(DEFINES) --include /home/jegan/qt-june-2024/Day6/db/moc_predefs.h -I/home/jegan/Qt/6.7.1/gcc_64/mkspecs/linux-g++ -I/home/jegan/qt-june-2024/Day6/db -I/home/jegan/qt-june-2024/Day6/db -I/home/jegan/Qt/6.7.1/gcc_64/include -I/home/jegan/Qt/6.7.1/gcc_64/include/QtGui -I/home/jegan/Qt/6.7.1/gcc_64/include/QtSql -I/home/jegan/Qt/6.7.1/gcc_64/include/QtCore -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include db.h -o moc_db.cpp
@@ -1382,7 +1401,23 @@ db.o: db.cpp db.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qsqldatabase.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlglobal.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsql-config.h \
-		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlexports.h
+		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/QDebug \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qshareddata_impl.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qset.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.7.1/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.7.1/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/q23utility.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o db.o db.cpp
 
 main.o: main.cpp ../../../Qt/6.7.1/gcc_64/include/QtCore/QCoreApplication \
@@ -1521,7 +1556,10 @@ main.o: main.cpp ../../../Qt/6.7.1/gcc_64/include/QtCore/QCoreApplication \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qsqldatabase.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlglobal.h \
 		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsql-config.h \
-		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlexports.h
+		../../../Qt/6.7.1/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.7.1/gcc_64/include/QtCore/QDebug \
+		../../../Qt/6.7.1/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.7.1/gcc_64/include/QtSql/qsqlquery.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 moc_db.o: moc_db.cpp 

@@ -1,16 +1,16 @@
 #include "db.h"
 
 DBLayer::DBLayer() {
-}
-
-void DBLayer::connect() {
-	QString strID, name, duration;
-	QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");			
+	db = QSqlDatabase::addDatabase("QMYSQL");			
 
 	db.setHostName("172.17.0.2");
 	db.setDatabaseName("tektutor");
 	db.setUserName("root");
 	db.setPassword("root@123");
+}
+
+void DBLayer::printRecords() {
+	QString strID, name, duration;
 	if ( db.open() ) {
 		qDebug() << "DB connected ...";
 		QSqlQuery query;
@@ -24,15 +24,28 @@ void DBLayer::connect() {
 			qDebug() << "Name = " << name;
 			qDebug() << "Duration = " << duration;
 		}
+		db.close();
 	}
 	else
 		qDebug() << "Unable to connect to Mysql server";
-
 }
 
-void DBLayer::disconnect() {
+void DBLayer::updateRecord() {
+	if ( db.open() ) {
+		QSqlQuery query;
+		query.exec("UPDATE training SET name='QML Programming' WHERE name='Qt HMI with C++';");
+		db.close();
+	}
 }
 
+void DBLayer::deleteRecord() {
+	if ( db.open() ) {
+		QSqlQuery query;
+		query.exec("DELETE FROM training WHERE name='QML Programming';");
+		db.close();
+	}
+	
+}
 
 DBLayer::~DBLayer()  {
 }
