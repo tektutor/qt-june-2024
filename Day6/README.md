@@ -25,6 +25,13 @@ SELECT * FROM training;
 DESCRIBE TABLE training;
 ```
 
+After runing qmake -project, you need to edit db.pro file and add QT += sql save it.
+```
 cd ~/qt-june-2024
 git pull
 cd Day6/db
+qmake -project
+qmake
+make clean all
+./db
+```
