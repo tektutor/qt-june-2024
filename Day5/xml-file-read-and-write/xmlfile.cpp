@@ -49,4 +49,27 @@ void XMLFile::write() {
 	file.close();
 }
 
-void XMLFile::read() { }
+void XMLFile::read() { 
+	QDomDocument document;
+
+	QFile file(filename);
+	file.open(QFile::ReadOnly | QFile::Text);
+	document.setContent(&file);
+	file.close();
+
+	QDomElement root = document.firstChildElement();
+
+	QDomNodeList nodes = root.elementsByTagName("employee"); 
+
+	for(int count=0; count < nodes.count(); ++count) {
+		QDomNode node = nodes.at(count);
+
+		if ( node.isElement() ) {
+			QDomElement e = node.toElement();
+			qDebug() << e.attribute("id");
+			qDebug() << e.attribute("name");
+			qDebug() << e.attribute("title");
+			qDebug() << e.attribute("employer");
+		}
+	}
+}

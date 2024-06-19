@@ -1,10 +1,10 @@
 #include <QCoreApplication>
 #include "udpserver.h"
 
-int main ( int arg, char **argv ) {
+int main ( int argc, char **argv ) {
 	QCoreApplication theApp(argc, argv);
 
-	UdpServer server;
+	UDPServer server;
 	server.start();
 
 	return theApp.exec();

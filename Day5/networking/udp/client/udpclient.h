@@ -1,12 +1,14 @@
-#ifndef __UDP_H
-#define __UDP_H
+#ifndef __UDPCLIENT_H
+#define __UDPCLIENT_H
 
 #include <QDebug>
 #include <QObject>
 #include <QString>
 #include <QUdpSocket>
+#include <QByteArray>
+#include <QNetworkDatagram>
 
-class UDP : public QObject {
+class UDPClient : public QObject {
 Q_OBJECT
 private:
 	QUdpSocket *pSocket;
@@ -14,9 +16,10 @@ private slots:
 	void onMessageReceived();
 signals:
 public:
-	UDP();
-	~UDP();
-	void sendMesssage(QString);
+	UDPClient();
+	void start();
+	~UDPClient();
+	void sendMessage(QString);
 };
 
-#endif /* __UDP_H */
+#endif /* __UDPCLIENT_H */

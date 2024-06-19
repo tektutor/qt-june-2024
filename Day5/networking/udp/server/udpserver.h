@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QString>
 #include <QUdpSocket>
+#include <QNetworkDatagram>
 
 class UDPServer : public QObject {
 Q_OBJECT
@@ -16,7 +17,8 @@ signals:
 public:
 	UDPServer();
 	~UDPServer();
-	void sendMesssage(QString);
+	void start();
+	void sendMessage(QString);
 };
 
 #endif /* __UDPServer_H */

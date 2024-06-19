@@ -1,13 +1,14 @@
-#include "udp.h"
+#include "udpserver.h"
 
 UDPServer::UDPServer() {
 	pSocket = new QUdpSocket(this);
+}
 
+void UDPServer::start() {
 	pSocket->bind(
 		QHostAddress::LocalHost,
 		2999
 	);
-
 	connect(
 		pSocket,
 		SIGNAL(readyRead()),
@@ -16,20 +17,20 @@ UDPServer::UDPServer() {
 	);
 }
 
-UDPServer::~UDPServer() {
 
+UDPServer::~UDPServer() {
 }
 
 void UDPServer::sendMessage(QString msg) {
-	
+	QByteArray buffer = msg.toUtf8();
+	QHostAddress sender;
+	pSocket->writeDatagram(buffer.data(), QHostAddress::LocalHost, 2999);
 }
 
 void UDPServer::onMessageReceived() {		
-	QByteArrary message;
-
 	while ( pSocket->hasPendingDatagrams() ) {
 		QNetworkDatagram datagram = pSocket->receiveDatagram();
 		QByteArray msg = datagram.data();
-		qDebug() << msg;
+		qDebug() << QString(msg);
 	}
 }

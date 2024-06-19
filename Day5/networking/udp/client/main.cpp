@@ -1,11 +1,11 @@
 #include <QCoreApplication>
-#include "UDP.h"
+#include "udpclient.h"
 
-int main ( int arg, char **argv ) {
+int main ( int argc, char **argv ) {
 	QCoreApplication theApp(argc, argv);
-
-	UDP client;
-
+	
+	UDPClient client;
+	client.start();
 
 	return theApp.exec();
 }

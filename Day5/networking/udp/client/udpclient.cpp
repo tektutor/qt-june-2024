@@ -1,13 +1,14 @@
-#include "udp.h"
+#include "udpclient.h"
 
-UDP::UDP() {
+UDPClient::UDPClient() {
 	pSocket = new QUdpSocket(this);
+}
 
+void UDPClient::start() {
 	pSocket->bind(
 		QHostAddress::LocalHost,
 		2999
 	);
-
 	connect(
 		pSocket,
 		SIGNAL(readyRead()),
@@ -16,34 +17,19 @@ UDP::UDP() {
 	);
 }
 
-UDP::~UDP() {
-
+UDPClient::~UDPClient() {
 }
 
-void UDP::sendMessage(QString msg) {
-	
-}
-
-void UDP::onMessageReceived() {		
-	QByteArrary message;
-	message.resize( 
-		pSocket->pendingDatagramSize());
-
+void UDPClient::sendMessage(QString msg) {
+	QByteArray buffer = msg.toUtf8();
 	QHostAddress sender;
-	quint16 senderPort;
+	pSocket->writeDatagram(buffer.data(), QHostAddress::LocalHost, 2999);
+}
 
-	pSocket->readDatagram(
-		message.data(),
-		message.size(),
-		&sender,
-		&senderPort
-	);
-
-	qDebug() << "Message from :"
-		 << sender.toString();
-
-	qDebug() << "Message Port :"
-		 << senderPort;
-
-	qDebug() << "Message: " << message;
+void UDPClient::onMessageReceived() {		
+	while ( pSocket->hasPendingDatagrams() ) {
+		QNetworkDatagram datagram = pSocket->receiveDatagram();
+		QByteArray msg = datagram.data();
+		qDebug() << QString(msg);
+	}
 }
