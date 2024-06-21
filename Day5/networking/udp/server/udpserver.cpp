@@ -24,7 +24,7 @@ UDPServer::~UDPServer() {
 void UDPServer::sendMessage(QString msg) {
 	QByteArray buffer = msg.toUtf8();
 	QHostAddress sender;
-	pSocket->writeDatagram(buffer.data(), QHostAddress::LocalHost, 2999);
+	pSocket->writeDatagram(buffer.data(), QHostAddress::LocalHost, 3999);
 }
 
 void UDPServer::onMessageReceived() {		
@@ -32,5 +32,6 @@ void UDPServer::onMessageReceived() {
 		QNetworkDatagram datagram = pSocket->receiveDatagram();
 		QByteArray msg = datagram.data();
 		qDebug() << QString(msg);
+		sendMessage("Server received your message");
 	}
 }

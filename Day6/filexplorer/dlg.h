@@ -23,7 +23,7 @@ private slots:
 	void onTreeViewClicked(const QModelIndex &index);
 signals:
 public:
-	Dlg();
+	Dlg(QWidget *parent=nullptr, Qt::WindowFlags f= windowState() & ~Qt::WindowMinimized);
 	~Dlg();
 };
 

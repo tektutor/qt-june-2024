@@ -1,6 +1,8 @@
 #include "dlg.h"
 
-Dlg::Dlg() {
+Dlg::Dlg(QWidget *parent, Qt::WindowFlags f ) 
+	: QDialog(parent,f) {
+
 	pSplitter = new QSplitter;
 	
 	QString path = "/";	

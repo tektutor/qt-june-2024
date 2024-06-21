@@ -6,6 +6,7 @@ int main ( int argc, char **argv ) {
 	
 	UDPClient client;
 	client.start();
+	client.sendMessage("Message from client");
 
 	return theApp.exec();
 }

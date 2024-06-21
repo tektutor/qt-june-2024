@@ -7,7 +7,7 @@ UDPClient::UDPClient() {
 void UDPClient::start() {
 	pSocket->bind(
 		QHostAddress::LocalHost,
-		2999
+		3999
 	);
 	connect(
 		pSocket,
@@ -31,5 +31,6 @@ void UDPClient::onMessageReceived() {
 		QNetworkDatagram datagram = pSocket->receiveDatagram();
 		QByteArray msg = datagram.data();
 		qDebug() << QString(msg);
+		sendMessage("Hello from client");
 	}
 }

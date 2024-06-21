@@ -6,6 +6,7 @@ int main ( int argc, char **argv ) {
 
 	UDPServer server;
 	server.start();
+	server.sendMessage("Hello Udp Socket !");
 
 	return theApp.exec();
 }
