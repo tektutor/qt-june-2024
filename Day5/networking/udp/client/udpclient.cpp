@@ -24,6 +24,7 @@ void UDPClient::sendMessage(QString msg) {
 	QByteArray buffer = msg.toUtf8();
 	QHostAddress sender;
 	pSocket->writeDatagram(buffer.data(), QHostAddress::LocalHost, 2999);
+	pSocket->flush();
 }
 
 void UDPClient::onMessageReceived() {		
